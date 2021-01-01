@@ -19,6 +19,7 @@ colorscheme jellybeans
 let mapleader = ","
 nnoremap <leader>q :bp<CR>
 nnoremap <leader>w :bn<CR>
+nnoremap <leader>t :bel sp 50<CR>:resize 10<CR>:term<CR>
 
 let g:indent_guides_enable_on_vim_startup = 1
 let g:airline#extensions#tabline#enabled = 1
