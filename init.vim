@@ -34,7 +34,7 @@ let g:diminactive_enable_focus = 1
 
 let g:jupyter_mapkeys = 1
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 	Plug 'nathanaelkane/vim-indent-guides'
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
