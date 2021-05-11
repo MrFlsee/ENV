@@ -42,7 +42,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'jupyter-vim/jupyter-vim'
 	Plug 'majutsushi/tagbar'
 	Plug 'scrooloose/nerdtree'
-	Plug 'psf/black', { 'tag': '19.10b0' }
-	Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'psf/black', { 'branch': 'stable' }
+	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
