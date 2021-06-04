@@ -3,6 +3,7 @@ set cindent
 set smartindent
 set tabstop=4
 set shiftwidth=4
+set number
 set relativenumber
 set ruler
 set title
@@ -14,6 +15,7 @@ set hlsearch
 set ignorecase
 set tags=./tags,tags
 
+
 "colorscheme
 colorscheme jellybeans
 
@@ -21,8 +23,11 @@ let maplocalleader = "\\"
 let mapleader = ","
 nnoremap <leader>q :bp<CR>
 nnoremap <leader>w :bn<CR>
+nnoremap <leader>e :bd<CR>
+nnoremap <leader>g :GoDef<CR>
 nnoremap <leader>t :bel sp 50<CR>:resize 10<CR>:term<CR>
 nnoremap <leader>l :Black<CR>
+nnoremap <C-p> :Files<CR>
 nmap <f8> :NERDTreeToggle<CR>
 nmap <f9> :TagbarToggle<CR>
 
@@ -31,6 +36,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='hybrid'
 " for blueyed/vim-diminactive
 let g:diminactive_enable_focus = 1
+
+" for vim-minimap
+let g:minimap_width = 12
+let g:minimap_auto_start = 1
+let g:minimap_auto_start_win_enter = 1
 
 let g:jupyter_mapkeys = 1
 
@@ -42,7 +52,11 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'jupyter-vim/jupyter-vim'
 	Plug 'majutsushi/tagbar'
 	Plug 'scrooloose/nerdtree'
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'psf/black', { 'tag': '19.10b0' }
+	Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 	Plug 'psf/black', { 'branch': 'stable' }
 	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+	Plug 'junegunn/fzf.vim'
+	Plug 'wfxr/minimap.vim'
 call plug#end()
