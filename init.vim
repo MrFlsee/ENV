@@ -15,15 +15,27 @@ set hlsearch
 set ignorecase
 set tags=./tags,tags
 
-
-"colorscheme
-colorscheme jellybeans
+" for true color
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+syntax on
+set t_Co=256
+set cursorline
+colorscheme onehalfdark
+"colorscheme onehalflight
+let g:airline_theme='onehalfdark'
+" lightline
+" let g:lightline = { 'colorscheme': 'onehalfdark' }
+hi Normal guibg=NONE ctermbg=NONE
 
 let maplocalleader = "\\"
 let mapleader = ","
 nnoremap <leader>q :bp<CR>
 nnoremap <leader>w :bn<CR>
-nnoremap <leader>e :bd<CR>
+nnoremap <leader>e :BD<CR>
 nnoremap <leader>g :GoDef<CR>
 nnoremap <leader>t :bel sp 50<CR>:resize 10<CR>:term<CR>
 nnoremap <leader>l :Black<CR>
@@ -38,9 +50,9 @@ let g:airline_theme='hybrid'
 let g:diminactive_enable_focus = 1
 
 " for vim-minimap
-let g:minimap_width = 12
-let g:minimap_auto_start = 1
-let g:minimap_auto_start_win_enter = 1
+"let g:minimap_width = 12
+"let g:minimap_auto_start = 1
+"let g:minimap_auto_start_win_enter = 1
 
 let g:jupyter_mapkeys = 1
 
@@ -59,4 +71,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
 	Plug 'wfxr/minimap.vim'
+	Plug 'sonph/onehalf', { 'rtp': 'vim' }
+	Plug 'qpkorr/vim-bufkill'
+	Plug 'tpope/vim-commentary'
 call plug#end()
