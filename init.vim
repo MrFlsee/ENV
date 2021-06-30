@@ -1,4 +1,5 @@
 set autoindent
+set mouse=a
 set cindent
 set smartindent
 set tabstop=4
@@ -74,4 +75,5 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'sonph/onehalf', { 'rtp': 'vim' }
 	Plug 'qpkorr/vim-bufkill'
 	Plug 'tpope/vim-commentary'
+	Plug 'jiangmiao/auto-pairs'
 call plug#end()
