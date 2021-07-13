@@ -1,5 +1,5 @@
-set autoindent
 set mouse=a
+set autoindent
 set cindent
 set smartindent
 set tabstop=4
@@ -34,8 +34,8 @@ hi Normal guibg=NONE ctermbg=NONE
 
 let maplocalleader = "\\"
 let mapleader = ","
-nnoremap <leader>q :bp<CR>
-nnoremap <leader>w :bn<CR>
+nnoremap <leader>q :bp!<CR>
+nnoremap <leader>w :bn!<CR>
 nnoremap <leader>e :BD<CR>
 nnoremap <leader>g :GoDef<CR>
 nnoremap <leader>t :bel sp 50<CR>:resize 10<CR>:term<CR>
@@ -44,7 +44,7 @@ nnoremap <C-p> :Files<CR>
 nmap <f8> :NERDTreeToggle<CR>
 nmap <f9> :TagbarToggle<CR>
 
-let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_enable_on_vim_startup = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='hybrid'
 " for blueyed/vim-diminactive
@@ -62,7 +62,6 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'blueyed/vim-diminactive'
-	Plug 'jupyter-vim/jupyter-vim'
 	Plug 'majutsushi/tagbar'
 	Plug 'scrooloose/nerdtree'
 	Plug 'psf/black', { 'tag': '19.10b0' }
